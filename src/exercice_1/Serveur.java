@@ -14,7 +14,7 @@ public class Serveur {
 			while (true) {
 				s.receive(paquet); // Reception du paquet
 				String st = new String(paquet.getData(),0,paquet.getLength());
-				System.out.println("J'ai reçu " + st);				
+				System.out.println("J'ai reçu : " + st);				
 			}
 		}
 		catch(Exception e) {

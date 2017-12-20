@@ -11,10 +11,17 @@ public class Client {
 		// TODO Auto-generated method stub
 		try {
 			DatagramSocket s = new DatagramSocket();
-			byte[] data = args[0].getBytes();
+			String msg = new String();
+			msg="Je suis vivant";
+			byte[] data = msg.getBytes();
 			InetSocketAddress sa = new InetSocketAddress("localhost", 6789);
 			DatagramPacket paquet = new DatagramPacket(data,data.length,sa);	// Creation paquet de données
-			s.send(paquet);			
+			s.send(paquet);
+			
+			msg="Oui je suis";
+			byte[] data2 = msg.getBytes();
+			DatagramPacket paquet2 = new DatagramPacket(data2,data2.length,sa);	// Creation paquet de données
+			s.send(paquet2);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
